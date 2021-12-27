@@ -47,12 +47,12 @@ export default {
       },
       sampleBlogPost: [
         {
-          title: "This a a Filler Title!",
+          title: "This a Filler Title!",
           blogHTML: "This is a filler blog post title!",
           blogCoverPhoto: "beautiful-stories",
         },
         {
-          title: "This a a Filler Title!",
+          title: "This a Filler Title!",
           blogHTML: "This is a filler blog post title!",
           blogCoverPhoto: "designed-for-everyone",
         },
