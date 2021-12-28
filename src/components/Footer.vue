@@ -3,7 +3,7 @@
     <div class="container">
       <div class="left">
         <div class="col-1">
-          <router-link class="header" :to="{name: 'home'}">FireBlogs</router-link>
+          <router-link class="header" :to="{name: 'home'}">FutaBlogs</router-link>
           <ul>
             <li>
               <a href="#">
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="right">
-        <p>Copyright 2021 All Rights Reserved</p>
+        <p>	&copy; Copyright 2021 All Rights Reserved</p>
       </div>
     </div>
   </footer>
@@ -54,6 +54,11 @@ export default {
     twitter,
     instagram,
     linkedin,
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
   },
 };
 </script>

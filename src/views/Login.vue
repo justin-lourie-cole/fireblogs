@@ -1,11 +1,11 @@
 <template lang="html">
   <div class="form-wrap">
-    <form action="" class="login">
+    <form class="login">
       <p class="login-register">
-        Don't have and account?
+        Don't have an account?
         <router-link class="router-link" :to="{name: 'register'}">Register</router-link>
       </p>
-      <h2>Login to FireBlogs</h2>
+      <h2>Login to FutaBlogs</h2>
       <div class="inputs">
         <div class="input">
           <input type="text" placeholder="Email" v-model="email">
@@ -15,9 +15,10 @@
           <input type="password" placeholder="Password" v-model="password">
           <password class="icon" />
         </div>
+        <div v-show="error" class="error">{{ this.errorMsg }}</div>
       </div>
       <router-link class="forgot-password" :to="{name: 'forgotPassword'}">Forgot your Password</router-link>
-      <button>Sign In</button>
+      <button @click.prevent="signIn">Sign In</button>
       <div class="angle"></div>
     </form>
     <div class="background"></div>
@@ -26,6 +27,8 @@
 <script>
 import email from "../assets/Icons/envelope-regular.svg";
 import password from "../assets/Icons/lock-alt-solid.svg";
+import firebase from "firebase/app";
+import "firebase/auth";
 export default {
   name: "Login",
   components: {
@@ -36,7 +39,25 @@ export default {
     return {
       email: null,
       password: null,
+      error: null,
+      errorMsg: "",
     };
+  },
+  methods: {
+    signIn() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          this.$router.push({ name: "home" });
+          this.error = false;
+          this.errorMsg = "";
+        })
+        .catch((err) => {
+          this.error = true;
+          this.errorMsg = err.message;
+        });
+    },
   },
 };
 </script>

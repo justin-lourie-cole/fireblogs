@@ -9,8 +9,9 @@ import ForgotPassword from "../views/ForgotPassword.vue";
 Vue.use(VueRouter);
 
 const routes = [
+  {path: "/", redirect: { name: "home"}},
   {
-    path: "/",
+    path: "/home",
     name: "home",
     component: Home,
     meta: {
@@ -55,7 +56,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} | FireBlogs`;
+  document.title = `${to.meta.title} | FutaBlogs`;
   next();
 })
 
