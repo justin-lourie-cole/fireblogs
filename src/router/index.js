@@ -5,11 +5,12 @@ import Blogs from "../views/Blogs.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
+import NewPost from "../views/NewPost.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  {path: "/", redirect: { name: "home"}},
+  { path: "/", redirect: { name: "home" } },
   {
     path: "/home",
     name: "home",
@@ -25,26 +26,33 @@ const routes = [
     meta: {
       title: "Blogs",
     }
-  },{
+  }, {
     path: "/login",
     name: "login",
     component: Login,
     meta: {
       title: "Login",
     }
-  },{
+  }, {
     path: "/register",
     name: "register",
     component: Register,
     meta: {
       title: "Register",
     }
-  },{
+  }, {
     path: "/forgot-password",
     name: "forgotPassword",
     component: ForgotPassword,
     meta: {
       title: "Forgot Password",
+    }
+  }, {
+    path: "/newpost",
+    name: "newpost",
+    component: NewPost,
+    meta: {
+      title: "New Post",
     }
   }
 ];
