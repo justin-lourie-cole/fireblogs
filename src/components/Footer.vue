@@ -3,7 +3,7 @@
     <div class="container">
       <div class="left">
         <div class="col-1">
-          <router-link class="header" :to="{name: 'home'}">FutaBlogs</router-link>
+          <router-link class="header" :to="{ name: 'home' }">FutaBlogs</router-link>
           <ul>
             <li>
               <a href="#">
@@ -29,15 +29,15 @@
         </div>
         <div class="col-2">
           <ul>
-            <router-link class="link" :to="{name: 'home'}">Home</router-link>
-            <router-link class="link" :to="{name: 'blogs'}">Blog</router-link>
-            <router-link v-if="user" class="link" :to="{name: 'newpost'}">Create Post</router-link>
-            <router-link v-if="!user" class="link" :to="{name: 'login'}">Login / Register</router-link>
+            <router-link class="link" :to="{ name: 'home' }">Home</router-link>
+            <router-link class="link" :to="{ name: 'blogs' }">Blog</router-link>
+            <router-link v-if="user" class="link" :to="{ name: 'createPost' }">Create Post</router-link>
+            <router-link v-if="!user" class="link" :to="{ name: 'login' }">Login / Register</router-link>
           </ul>
         </div>
       </div>
       <div class="right">
-        <p>	&copy; Copyright 2021 All Rights Reserved</p>
+        <p>&copy; Copyright 2021 All Rights Reserved</p>
       </div>
     </div>
   </footer>
